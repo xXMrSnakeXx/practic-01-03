@@ -4,6 +4,7 @@ import { Outlet, NavLink } from 'react-router-dom';
 import { MdCurrencyExchange } from 'react-icons/md';
 
 import styles from './Header.module.css';
+import Loader from '../Loader/Loader';
 
 const Header = () => {
   const addActive = ({ isActive }) => (isActive ? styles.active : styles.link);
@@ -27,9 +28,9 @@ const Header = () => {
             </ul>
           </nav>
         </div>
-       //✔ Add base currency here !!!
+
       </header>
-      <Suspense fallback={null}>
+      <Suspense fallback={<Loader/>}>
         <Outlet />
       </Suspense>
     </>
